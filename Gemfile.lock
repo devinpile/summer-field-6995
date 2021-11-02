@@ -72,6 +72,9 @@ GEM
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.15.0)
+    ffi (1.15.0-java)
+    ffi (1.15.0-x64-mingw32)
+    ffi (1.15.0-x86-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.10)
@@ -95,17 +98,33 @@ GEM
     mini_portile2 (2.5.0)
     minitest (5.14.4)
     msgpack (1.4.2)
+    msgpack (1.4.2-java)
     nio4r (2.5.7)
+    nio4r (2.5.7-java)
     nokogiri (1.11.2)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    nokogiri (1.11.2-java)
+      racc (~> 1.4)
+    nokogiri (1.11.2-x64-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.11.2-x86-mingw32)
+      racc (~> 1.4)
     pg (1.2.3)
+    pg (1.2.3-x64-mingw32)
+    pg (1.2.3-x86-mingw32)
     pry (0.14.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    pry (0.14.0-java)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+      spoon (~> 0.0)
     public_suffix (4.0.6)
     puma (3.12.6)
+    puma (3.12.6-java)
     racc (1.5.2)
+    racc (1.5.2-java)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -175,6 +194,8 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.2)
+    spoon (0.0.6)
+      ffi
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -184,9 +205,12 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.1.0)
     thread_safe (0.3.6)
+    thread_safe (0.3.6-java)
     tilt (2.0.10)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2021.5)
+      tzinfo (>= 1.0.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     web-console (3.7.0)
@@ -196,12 +220,18 @@ GEM
       railties (>= 5.0)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
+    websocket-driver (0.7.3-java)
+      websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 
 PLATFORMS
+  java
   ruby
+  x64-mingw32
+  x86-mingw32
+  x86-mswin32
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
@@ -223,7 +253,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 2.7.2p137
 
 BUNDLED WITH
    2.1.4
