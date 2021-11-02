@@ -12,19 +12,20 @@ RSpec.describe 'studio index page' do
     @movie_actor = MovieActor.create!(movie_id: @movie1.id, actor_id:@actor2.id)
     @movie_actor = MovieActor.create!(movie_id: @movie2.id, actor_id:@actor1.id)
     @movie_actor = MovieActor.create!(movie_id: @movie2.id, actor_id:@actor3.id)
-    visit studio_path
+    visit studios_path
   end
 
   it "i see each studio's name and location" do
     within "#studio-#{@studio1.id}" do
-      expect(page).to have_content(@studio.name)
-      expect(page).to have_content(@studio.location)
+      expect(page).to have_content(@studio1.name)
+      expect(page).to have_content(@studio1.location)
     end
   end
 
   it "underneath each studio, i see the titles of all it's movies" do
     within "#studio-#{@studio1.id}" do
-      expect(page).to have_content([@movie1, @movie2])
+      expect(page).to have_content(@movie1.title)
+      expect(page).to have_content(@movie2.title)
     end
   end
-end 
+end
