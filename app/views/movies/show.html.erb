@@ -1,0 +1,6 @@
+<h1><%= @movie.title %></h1>
+<h4>Actors from youngest to oldest </h4>
+<% @movie.actors.each do |actor| %>
+  <p><%= actor.name%></p>
+<% end %>
+<h4>Actors Average Age: <%= "#{@actors.average_age}" %></h4>
