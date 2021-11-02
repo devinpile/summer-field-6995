@@ -7,7 +7,7 @@ RSpec.describe 'Movies Show Page' do
     # @movie2 = @studio1.movies.create!(title: "Add Foreign Key", creation_year: 2022, genre: "Romantic/Comedy")
     @actor1 = Actor.create!(name: "Ruby Rails", age: 27)
     @actor2 = Actor.create!(name: "Mercy Quill", age: 53)
-    # @actor3 = Actor.create!(name: "Repo Pomodoro", age: 33)
+    @actor3 = Actor.create!(name: "Repo Pomodoro", age: 33)
     @movie_actor = MovieActor.create!(movie_id: @movie1.id, actor_id:@actor1.id)
     @movie_actor = MovieActor.create!(movie_id: @movie1.id, actor_id:@actor2.id)
     # @movie_actor = MovieActor.create!(movie_id: @movie2.id, actor_id:@actor1.id)
@@ -31,8 +31,19 @@ RSpec.describe 'Movies Show Page' do
 
   describe 'add an actor to a movie' do
     it 'i do not see any actor listed that are not part of the movie' do
+      expect(page).to_not have_content(@actor3)
     end
 
-    it 
+    it 'i see a form to add an actor to this movie' do
+      expect(page).to have_content("Add an Actor:")
+    end
 
+    it 'when i fill out the form and click submit, i am redirected to movie show page and see the actor added' do
+      fill_in "Name", with: "Alan Turing"
+      fill_in "Age", with: 55
+      click_on "Submit"
+      expect(current_path).to eq("/movies/#{@movie1.id}")
+      expect(page).to have_content("Alan Turing")
+    end
+  end
 end
